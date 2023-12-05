@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'voting_app',
     'gov_app',
-    'widget-tweaks',
+    # 'widget-tweaks',
 ]
 
 MIDDLEWARE = [
