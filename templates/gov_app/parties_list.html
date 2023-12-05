@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political Parties List</title>
+</head>
+<body>
+    <h1>Political Parties List</h1>
+
+    {% if parties %}
+        <ul>
+            {% for party in parties %}
+                <li>
+                    <img src="{{ party.logo.url }}" alt="{{ party.title }} Logo" width="50">
+                    <h2>{{ party.title }}</h2>
+                    <p>Ideology: {{ party.ideology }}</p>
+                    <p>Year Founded: {{ party.year_founded }}</p>
+                    <p>Slogan: {{ party.slogan }}</p>
+                    <p>Contact Information: {{ party.contact_information }}</p>
+                    <p>Social Media Links: {{ party.social_media_links }}</p>
+                    {% if party.leader %}
+                        <p>Leader: {{ party.leader.user.firstname }} {{ party.leader.user.secondname }}</p>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No political parties available.</p>
+    {% endif %}
+</body>
+</html>

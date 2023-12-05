@@ -1,8 +1,8 @@
 from django.db import models
-from gov_app.models import *
 
 # candidates = [('one', 'one'), ('two', 'two'), ('three', 'three'),
 # ('four', 'four'), ('five', 'five'), ('six', 'six'), ('seven', 'seven'), ('eight', 'eight'), ('nine', 'nine')]
+
 
 class User(models.Model):
     firstname = models.CharField(max_length=15)
@@ -17,9 +17,9 @@ class User(models.Model):
 
 
 class Vote(models.Model):
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     # voted_candidate = models.CharField(max_length=10,choices=candidates,default='one')
-    voted_candidate = models.CharField(max_length=155)
+    voted_candidate = models.IntegerField()
     voted_time = models.DateTimeField(auto_now=True)
 
     def __str__(self):
