@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from .models import User
 
-# Create your views here.
+
+def main(request):
+    return render(request, 'gov_app/vote.html')
