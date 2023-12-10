@@ -1,8 +1,7 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Candidate List</title>
 </head>
 <body>
@@ -12,7 +11,11 @@
         <ul>
             {% for candidate in candidates %}
                 <li>
-                    <img src="{{ candidate.avatar.url }}" alt="{{ candidate.user.firstname }} Avatar" width="50">
+                    {% if candidate.avatar %}
+                        <img src="{{ candidate.avatar.url }}">
+                        <!-- {{candidate.avatar}} -->
+                    {% endif %}
+                    <!-- <img src="{{ candidate.avatar.url }}" alt="{{ candidate.user.firstname }} Avatar" width="50"> -->
                     <h2>{{ candidate.user.firstname }} {{ candidate.user.secondname }}</h2>
                     <p>Biography: {{ candidate.biography }}</p>
                     <p>Contact Information: {{ candidate.contact_information }}</p>
@@ -23,8 +26,6 @@
                 </li>
             {% endfor %}
         </ul>
-    {% else %}
-        <p>No candidates available.</p>
     {% endif %}
 </body>
 </html>

@@ -9,9 +9,10 @@ def main(request):
 def candidate_list(request):
     candidates = Candidate.objects.all()
     context = {
-        'candidates': candidates
+        'candidates': candidates,
     }
     return render(request, 'gov_app/candidate_list.html', context)
+
 
 
 def party_list(request):
