@@ -3,4 +3,4 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'voting_app/index.html')
+    return render(request, 'voting_app/vote.html')
