@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate List</title>
+</head>
+<body>
+    <h1>Candidate List</h1>
+
+    {% if candidates %}
+        <ul>
+            {% for candidate in candidates %}
+                <li>
+                    <img src="{{ candidate.avatar.url }}" alt="{{ candidate.user.firstname }} Avatar" width="50">
+                    <h2>{{ candidate.user.firstname }} {{ candidate.user.secondname }}</h2>
+                    <p>Biography: {{ candidate.biography }}</p>
+                    <p>Contact Information: {{ candidate.contact_information }}</p>
+                    <p>Social Media Links: {{ candidate.social_media_links }}</p>
+                    {% if candidate.party %}
+                        <p>Party: {{ candidate.party.title }}</p>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No candidates available.</p>
+    {% endif %}
+</body>
+</html>

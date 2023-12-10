@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import vote
+from .views import *
 
 urlpatterns = [
-    path('vote/', vote, name='vote'),
+    path('index/', index, name='index'),
     # Add other voting_app URLs
 ]
