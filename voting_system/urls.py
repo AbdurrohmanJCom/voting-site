@@ -23,5 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),    
     path('', include('voting_app.urls')),
     path('', include('gov_app.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
 

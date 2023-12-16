@@ -7,6 +7,7 @@ class User(models.Model):
     thirdname = models.CharField(max_length=15, blank=True, null=True)
     birth_date = models.DateField()                                   
     date_created = models.DateTimeField(auto_now_add=True)
+    series_passport = models.CharField(max_length=2)
     identification = models.PositiveIntegerField()
 
     def __str__(self):
