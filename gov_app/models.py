@@ -16,6 +16,7 @@ class PoliticalParty(models.Model):
     def __str__(self):
         return self.title
 
+
 class Candidate(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     avatar = models.ImageField(upload_to='', null=True, blank=True)
