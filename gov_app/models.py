@@ -2,11 +2,12 @@ from django.db import models
 from voting_app.models import User
 
 
+
 class PoliticalParty(models.Model):
     title = models.CharField(max_length=100, unique=True)
     logo = models.ImageField(upload_to='', null=True, blank=True)
     leader = models.OneToOneField('gov_app.Candidate', on_delete=models.SET_NULL, null=True, blank=True)
-    ideology = models.TextField()
+    ideology = models.TextField()   
     year_founded = models.DateField()
     slogan = models.CharField(max_length=255)
     social_media_links = models.URLField(max_length=255, blank=True, null=True)

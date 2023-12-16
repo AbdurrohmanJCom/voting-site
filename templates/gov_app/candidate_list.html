@@ -14,12 +14,14 @@
                     {% if candidate.avatar %}
                         <img src="{{ candidate.avatar.url }}">
                         <!-- {{candidate.avatar}} -->
+                    
                     {% endif %}
+
                     <!-- <img src="{{ candidate.avatar.url }}" alt="{{ candidate.user.firstname }} Avatar" width="50"> -->
                     <h2>{{ candidate.user.firstname }} {{ candidate.user.secondname }}</h2>
                     <p>Biography: {{ candidate.biography }}</p>
                     <p>Contact Information: {{ candidate.contact_information }}</p>
-                    <p>Social Media Links: {{ candidate.social_media_links }}</p>
+                    <p>Social Media Links: <a href="https://www.youtube.com/">click here</a></p>
                     {% if candidate.party %}
                         <p>Party: {{ candidate.party.title }}</p>
                     {% endif %}
